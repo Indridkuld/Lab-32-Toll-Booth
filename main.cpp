@@ -11,7 +11,8 @@ using namespace std;
 
 int initSIZE = 2, timeStep = 0;
 
-void popDeque(deque<Car>& dq) ; 
+// Function prototype
+void popDeque(deque<Car>& dq) ;  
 
 int main() {
     deque<Car> tollLine; 
@@ -23,13 +24,13 @@ int main() {
         cout << "    ";
         c.print();
     }
-
+    // Simulation loop 
     while (!tollLine.empty()) {
         timeStep++;
         int randNum = rand() % 100; // random number between 0-99
 
         if (randNum < 55) { // 55% head car pays and leaves
-            cout << "Time: " << timeStep << "Operation: Car paid: ";
+            cout << "Time: " << timeStep << " Operation: Car paid: ";
             tollLine.front().print();
             tollLine.pop_front();
         } else {
@@ -38,22 +39,24 @@ int main() {
             cout << "Time: " << timeStep << " Operation: Joined lane: ";
             tollLine.back().print();
         }
-    }
-    // prints final state of the queue
-    cout << "\nQueue: " << endl;
-    if (tollLine.empty()) {
-            cout << "    Empty\n";
-        } else {
-            for (Car& c : tollLine) {
-                cout << "    ";
-                c.print();
+
+        // prints final state of the queue
+        cout << "Queue:\n";
+        if (tollLine.empty()) {
+                cout << "    Empty\n";
+            } else {
+                for (Car& c : tollLine) {
+                    cout << "    ";
+                    c.print();
+                }
             }
-        }
-    
+        cout << "\n";   
+    }   
+    cout << "This simulation ran " << timeStep << " cycles until the queue was empty; your results will vary.\n";
     return 0; 
 }
 
-
+// function definition
 void popDeque(deque<Car>& dq) {
     for (int i = 0; i < initSIZE; i++) {
         dq.push_back(Car()); 
