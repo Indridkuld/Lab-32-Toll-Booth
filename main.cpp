@@ -15,6 +15,8 @@ int initSIZE = 2, timeStep = 0;
 void popDeque(deque<Car>& dq) ;  
 
 int main() {
+    srand(static_cast<unsigned int>(time(0))); // seed random number generator
+    
     deque<Car> tollLine; 
 
     popDeque(tollLine);
