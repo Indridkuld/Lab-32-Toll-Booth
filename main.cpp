@@ -9,13 +9,29 @@
 
 using namespace std; 
 
+int initSIZE = 2, timeStep = 0;
+
+void popDeque(deque<Car>& dq) ; 
+
 int main() {
-    int initSIZE = 2, timeStep = 0;
     deque<Car> tollLine; 
 
-    for (int i = 0; i < initSIZE; i++) {
-        tollLine.push_back(Car()); 
+    while (!tollLine.empty()) {
+        timeStep++;
+        
+        popDeque(tollLine);
+
+
     }
+
+
     
     return 0; 
+}
+
+
+void popDeque(deque<Car>& dq) {
+    for (int i = 0; i < initSIZE; i++) {
+        dq.push_back(Car()); 
+    }
 }
