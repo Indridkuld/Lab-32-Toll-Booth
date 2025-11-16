@@ -2,6 +2,7 @@
 // IDE used: Visual Studio Code
 #include <iostream>
 #include <deque>
+#include <array>
 #include <cstdlib>
 #include <ctime>
 
@@ -16,6 +17,8 @@ void popDeque(deque<Car>& dq) ;
 
 int main() {
     srand(static_cast<unsigned int>(time(0))); // seed random number generator
+
+    array<deque<Car>, 4> Lanes;
     
     deque<Car> tollLine; 
 
@@ -27,7 +30,7 @@ int main() {
         c.print();
     }
     // Simulation loop 
-    while (!tollLine.empty()) {
+    while (!tollLine.empty() && timeStep < 21) {
         timeStep++;
         int randNum = rand() % 100; // random number between 0-99
 
