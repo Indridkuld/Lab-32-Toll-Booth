@@ -54,7 +54,7 @@ int main() {
             }
         cout << "\n";   
     }   
-    cout << "This simulation ran " << timeStep << " cycles until the queue was empty; your results will vary.\n";
+    cout << "This simulation ran " << timeStep << " cycles until the queue was empty.\n";
     return 0; 
 }
 
